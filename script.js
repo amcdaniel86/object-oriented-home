@@ -162,3 +162,77 @@ function BlackjackGame () {
 game = new BlackjackGame();
 
 game
+
+// function Animal(name, owner){
+//   this.name = name;
+//   this.owner = owner;
+// }
+
+// let myAnimal = new Animal('mickey', 'disney');
+// console.log(myAnimal.name);
+// //object literal notation below
+// let myAnimal = {name: 'mickey', owner: 'disney'}
+// console.log(myAnimal.name);
+
+function Animal (name, owner) {
+  this.name = name;
+  this.owner = owner;
+}
+let myAnimal = new Animal('arya', 'josephine');
+let yourAnimal = new Animal('max', 'owen');
+console.log(myAnimal.name);
+console.log(yourAnimal.name);
+console.log(myAnimal.owner);
+console.log(yourAnimal.owner);
+
+// arya and max above are instances of the Animal
+// class.
+// Constructor functions are used to create INSTANCE objects.
+
+function Item (name, price) {
+  this.name = name;
+  this.price = price;
+}
+
+function Fruit (name, price) {
+  Item.call = (this, name, price);
+  this.expDate = ('november');
+  this.brand = ('chiquita');
+}
+
+let myItem = new Item('iPhone', '$' + 600);
+let yourItem = new Item('iPod', '$' + 300);
+console.log(myItem.price);
+console.log(yourItem.name);
+
+// Inheritance //
+function Animal (name, owner, sound) {
+  this.name = name;
+  this.owner = owner;
+  this.sound = sound;
+}
+function Dog (name, owner){ //pre-inheritance
+  this.name = name;
+  this.owner = owner;
+  this.sound = "guau guau";
+  this.humanRelation = "love";
+}
+myAnimal = new Animal('arya', 'josephine', '--');
+let myDog = new Dog('max', 'owen');
+console.log(myAnimal.name);
+console.log(myDog.name);
+
+function Animal (name, owner, sound) {
+  this.name = name;
+  this.owner = owner;
+  this.sound = sound;
+}
+function Dog (name, owner){
+  Animal.call(this, name, owner);
+  this.sound = "guau guau";
+  this.humanRelation = "love";
+}
+myAnimal = new Animal('arya', 'josephine', '--');
+myDog = new Dog('max', 'owen');
+console.log(myAnimal.name);
+console.log(myDog.name);
